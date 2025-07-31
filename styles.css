@@ -1,0 +1,252 @@
+/* Base Styling */
+body {
+  font-family: Comfortaa, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(160deg, #96fa96, #9face6);
+  color: #000;
+}
+
+.quiz-container {
+  background: #fff;
+  color: #000;
+  padding: 20px;
+  width: 90%;
+  max-width: 450px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+/* Hide sections */
+.hidden { display: none; }
+
+/* Title */
+h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* Theme Switch */
+#theme-switch button {
+  margin: 5px;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #eeeeee;
+  color: #000;
+  font-weight: bold;
+}
+#theme-switch button:hover { background: #ccc; }
+
+/* Inputs */
+#player-name, #difficulty {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+#file-upload { margin: 10px 0; }
+
+/* Buttons */
+button {
+  padding: 12px;
+  margin: 10px;
+  width: 80%;
+  background: #4caf50;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:hover { background: #43a047; }
+#next-btn:disabled {
+  background: #888;
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Quiz Section */
+#question {
+  font-size: 20px;
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+.option {
+  display: block;
+  background: #f2f2f2;
+  color: #000;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  font-weight: 500;
+  border: 1px solid #ccc;
+}
+.option:hover {
+  background: #e0e0e0;
+}
+.option.selected {
+  background: #4caf50;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Timer */
+#timer {
+  font-size: 18px;
+  margin: 10px 0;
+  font-weight: bold;
+  color: #57b609;
+}
+
+/* Progress Bar */
+#progress-bar {
+  width: 100%;
+  height: 12px;
+  background: #ddd;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+#progress {
+  width: 0%;
+  height: 100%;
+  background: #4caf50;
+  transition: width 0.3s ease;
+}
+
+/* Leaderboard and History */
+#leaderboard, #history {
+  text-align: left;
+  padding: 0;
+  list-style: none;
+  font-size: 16px;
+}
+#leaderboard li, #history li { margin: 5px 0; }
+
+/* Review Section */
+/* Review Section Theme Fix */
+body.light #review-list p {
+  background: #f8f8f8;
+  color: #000;
+  border: 1px solid #ccc;
+}
+
+body.dark #review-list p {
+  background: #2a2a2a;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+body.neon #review-list p {
+  background: #111;
+  color: #0ff;
+  border: 1px solid #0ff;
+}
+
+/* Responsive */
+@media screen and (max-width: 500px) {
+  .quiz-container { width: 95%; padding: 15px; }
+  h1 { font-size: 24px; }
+}
+
+/* THEME FIXES */
+/* Light Theme */
+body.light {
+  background: linear-gradient(160deg, #96fa96, #9face6);
+  color: #000;
+}
+body.light .quiz-container {
+  background: #fff;
+  color: #000;
+}
+body.light .option {
+  background: #f2f2f2;
+  color: #000;
+}
+body.light .option:hover {
+  background: #4caf50;
+  color:#fff;
+  font-weight: bold;
+}
+body.light .option.selected {
+  background: #4caf50;
+  color: #fff;
+}
+body.light button {
+  background: #4caf50;
+  color: #fff;
+}
+
+/* Dark Theme */
+body.dark {
+  background: linear-gradient(100deg, #000000, #5e5f5f);
+  color: #fff;
+}
+body.dark .quiz-container {
+  background: #464646;
+  color: #fff;
+}
+body.dark .option {
+  background: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
+body.dark .option:hover {
+  background: #444;
+}
+body.dark .option.selected {
+  background: #4caf50;
+  color: #fff;
+}
+body.dark button {
+  background: #4caf50;
+  color: #fff;
+}
+
+/* Neon Theme */
+body.neon {
+  background: linear-gradient(110deg, #000000, #7b03dd);
+  color: #8c03fc;
+}
+body.neon .quiz-container {
+  background: #111;
+  color: #8c03fc;
+  border: 2px solid #8c03fc;
+  box-shadow: 0 0 15px #8c03fc;
+}
+body.neon .option {
+  background: #222;
+  color: #8c03fc;
+  border: 1px solid #8c03fc;
+}
+body.neon .option:hover {
+  background: #8c03fc;
+  color: #000;
+  font-weight: bold;
+}
+body.neon .option.selected {
+  background: #8c03fc;
+  color: #000;
+}
+body.neon button {
+  background: #8c03fc;
+  color: #000;
+  font-weight: bold;
+}
+

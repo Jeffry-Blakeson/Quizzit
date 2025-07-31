@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quizzit!</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Quizzit!</h1>
+    <h3>The Best Quiz Game!</h3>
+    <!-- Theme Switch -->
+    <div id="theme-switch">
+      <button data-theme="light">Light</button>
+      <button data-theme="dark">Dark</button>
+      <button data-theme="neon">Neon</button>
+    </div>
+    <!-- Start Section -->
+    <div id="start-section">
+      <input type="text" id="player-name" placeholder="Enter your name">
+      <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+        <option value="superhard">Super Hard</option>
+        <option value="ridiculous">Ridiculous</option>
+      </select>
+      <input type="file" id="file-upload" accept=".json">
+      <button id="start-btn">Start Quiz</button>
+    </div>
+    <!-- Quiz Section -->
+    <div id="quiz-section" class="hidden">
+      <div id="timer">Time Left: 60s</div>
+      <div id="progress-bar"><div id="progress"></div></div>
+      <div id="question"></div>
+      <div id="options"></div>
+      <button id="next-btn" disabled>Next</button>
+    </div>
+    <!-- Result Section -->
+    <div id="result-section" class="hidden">
+      <h2>Quiz Finished!</h2>
+      <p id="final-score"></p>
+      <button id="review-btn">Review Answers</button>
+      <button onclick="restartQuiz()">Restart</button>
+      <h3>Leaderboard</h3>
+      <ul id="leaderboard"></ul>
+      <h4>Past History</h4>
+      <ul id="history"></ul>
+    </div>
+    <!-- Review Section -->
+    <div id="review-section" class="hidden">
+      <h2>Review Your Answers</h2>
+      <div id="review-list"></div>
+      <button onclick="goToStart()">Back to Start</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
